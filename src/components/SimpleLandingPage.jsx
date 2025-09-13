@@ -9,14 +9,17 @@ function ClientPresentationLandingPage() {
     {
       src: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=max&h=400&w=600",
       alt: "Serviço 1",
+      desc: "Landing pages personalizadas para o seu negócio.",
     },
     {
       src: "https://images.unsplash.com/photo-1542831371-d531d36971e6?crop=entropy&cs=tinysrgb&fit=max&h=400&w=600",
       alt: "Serviço 2",
+      desc: "Design moderno e responsivo que atrai clientes.",
     },
     {
       src: "https://images.unsplash.com/photo-1542831371-d531d36971e6?crop=entropy&cs=tinysrgb&fit=max&h=400&w=600",
       alt: "Serviço 3",
+      desc: "Implementação rápida com alta performance.",
     },
   ];
 
@@ -189,7 +192,7 @@ function ClientPresentationLandingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="overflow-hidden rounded-xl shadow-lg"
+              className="overflow-hidden rounded-xl shadow-lg bg-white flex flex-col"
             >
               <motion.img
                 src={item.src}
@@ -197,6 +200,12 @@ function ClientPresentationLandingPage() {
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                 whileHover={{ scale: 1.05, y: -5 }}
               />
+              <div className="p-6 text-gray-700 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-semibold mb-2 text-purple-700">
+                  {item.alt}
+                </h3>
+                <p className="text-sm">{item.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
